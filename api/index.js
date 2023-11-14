@@ -22,7 +22,7 @@ app.listen(4000, () => {
 })
 
 app.use("/api/auth",authRouter);
-app.use("/api/question");
+// app.use("/api/question");
 
 app.use((err,req,res,next)=>{
     const statusCode = err.statusCode || 500;
