@@ -1,0 +1,27 @@
+.card{
+    margin-top: 20px;
+    background-color: #7ab3d6;
+    display: flex;
+    /* border: 2px solid red; */
+    color: white;
+    padding: 10px 10px;
+    width: 80%;
+    border-radius: 18px;
+}
+.data{
+    line-height: 15px;
+    color: black;
+}
+.btn{
+    width: 46%;
+    height: 33%;
+    color: white;
+    background-color: #4c4cff;
+    border-radius: 50px;
+}
+@media (min-width: 426px) and (max-width: 686px) {
+    .btn{
+        position: relative;
+        left: 65px;
+    }
+}
