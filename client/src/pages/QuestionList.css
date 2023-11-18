@@ -1,0 +1,50 @@
+body{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+   /* overflow: hidden; */
+
+}
+.main{
+    background-color: black;
+
+}
+.head{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid red; */
+    color: white;
+    line-height: 0rem;
+}
+table, td, th {  
+    border: 1px solid #ddd;
+    color: white;
+    font: bold;
+    /* text-align: left; */
+  }
+  
+  table {
+    margin-left: 171px;
+    border-collapse: collapse;
+    width: 70%;
+  }
+  
+  th, td {
+     padding: 15px; 
+  }
+
+  @media (min-width: 570px) and (max-width: 852px) {
+    table {
+        margin-left: 115px;
+      }
+      
+}  
+  @media (min-width: 0px) and (max-width: 570px) {
+    table {
+        margin-left: 61px;
+      }
+      
+}  

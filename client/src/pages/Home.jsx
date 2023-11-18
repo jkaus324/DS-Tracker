@@ -1,6 +1,7 @@
 import React from 'react'
 import './Home.css'
 import Card from './../components/Card.jsx';
+import Header from '../components/Header.jsx';
 
 const CardItem = [
   {
@@ -44,6 +45,11 @@ const CardItem = [
 export default function Home() {
   console.log(CardItem);
   return (
+    <>
+
+      <footer className='footer'>
+        <Header/>
+      </footer>
     <div className='main'>
       <div className='head'>
       <h1>450 DSA Cracker</h1>
@@ -58,9 +64,7 @@ export default function Home() {
             return <Card {...item} key={item.id} />;
           })}
       </section>
-      <footer>
-          {/* <h1>hi</h1> */}
-      </footer>
   </div>
+    </>
   )
 }
