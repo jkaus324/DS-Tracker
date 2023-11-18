@@ -10,7 +10,7 @@ export default function Card(props) {
                 <h4>{Discription}</h4>
 
             </div>
-            <button className='btn'>Start Now</button>
+            <button className='btn'><a className='btn-a' href="/Questionlist">Start Now</a></button>
         </article>
     );
 };
