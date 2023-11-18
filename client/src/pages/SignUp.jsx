@@ -1,5 +1,7 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import './SignUp.css'; // Import the CSS file
+
 
 export default function SignUp() {
   const [formData, setFormData] = useState({});
@@ -9,8 +11,9 @@ export default function SignUp() {
     setFormData({
       ...formData,
       [e.target.id]: e.target.value,
-    })
-  }
+    });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -24,57 +27,61 @@ export default function SignUp() {
       const data = await res.json();
       console.log(data);
       if (data.success === false) {
-        console.log("Login failed!!");
+        console.log("Signup failed!!");
         return;
       }
-      console.log("Login success!!!");
-      navigate('/signin')
+      console.log("Signup success!!!");
+      navigate('/signin');
     } catch (err) {
       console.log(err);
     }
-  }
+  };
+
   return (
-    <div className='container p-3'>
-      <h1 className='text-center font-weight-bold my-4'>Signup</h1>
-      <form onSubmit={handleSubmit} className='mb-4'>
-        <div className='mb-3'>
-          <input
-            type='text'
-            placeholder='username'
-            className='form-control'
-            id='username'
-            onChange={handleChange}
-          />
+    <div className="container">
+      <div className="form-wrapper">
+        <h1 className="text-center mb-4">Sign Up</h1>
+        <form onSubmit={handleSubmit}>
+          <div className="mb-3">
+            <input
+              type="text"
+              placeholder="Username"
+              className="form-input"
+              id="username"
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="mb-3">
+            <input
+              type="text"
+              placeholder="Email"
+              className="form-input"
+              id="email"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="mb-3">
+            <input
+              type="password"
+              placeholder="Password"
+              className="form-input"
+              id="password"
+              onChange={handleChange}
+            />
+          </div>
+
+          <button type="submit" className="form-button">
+            Sign Up
+          </button>
+        </form>
+
+        <div className="text-center">
+          <p>Already have an account?</p>
+          <Link to="/signin" className="text-primary">
+            Sign In
+          </Link>
         </div>
-        <div className='mb-3'>
-          <input
-            type='text'
-            placeholder='email'
-            className='form-control'
-            id='email'
-            onChange={handleChange}
-          />
-        </div>
-        <div className='mb-3'>
-          <input
-            type='password'
-            placeholder='password'
-            className='form-control'
-            id='password'
-            onChange={handleChange}
-          />
-        </div>
-        <button
-          type='submit'
-          className='btn btn-primary btn-block'>
-          Sign Up
-        </button>
-      </form>
-      <div className='d-flex justify-content-center'>
-        <p className='mr-2'>Have an account?</p>
-        <Link to='/sign-in' className='text-primary'>
-          Sign In
-        </Link>
       </div>
     </div>
   );
